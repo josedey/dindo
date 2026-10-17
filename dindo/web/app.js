@@ -668,7 +668,8 @@ async function uploadFiles(files) {
         if (!res.ok) throw new Error(d.detail || res.status);
         row.innerHTML = uploadReport(d, (performance.now() - t0) / 1000);
       } catch (err) {
-        row.innerHTML = `<b>${esc(f.name)}</b><span class="small" style="color:var(--crit)">${t("read_error")}: ${esc(err.message)}</span>`;
+        const busy = /ai_busy/.test(err.message);
+        row.innerHTML = `<b>${esc(f.name)}</b><span class="small" style="color:var(--crit)">${busy ? t("ai_busy") : `${t("read_error")}: ${esc(err.message)}`}</span>`;
       }
     }
   };

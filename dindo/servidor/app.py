@@ -544,10 +544,13 @@ def upload_document(case_id: int, file: UploadFile = File(...)):
                              (case_id, "other", file.filename, stored)).lastrowid
     try:
         extracted = ai.extract_document(dest, case, insurer, case_id=case_id, document_id=doc_id)
-    except Exception as e:
+    except Exception as e:  # nothing half-read is kept: the family just uploads it again
+        print(f"extraction failed for {file.filename}: {e}")
         with db.connect() as con:
-            con.execute("UPDATE documents SET status='error', summary=? WHERE id=?", (str(e)[:500], doc_id))
-        raise HTTPException(502, f"The AMD model could not read the document: {e}")
+            con.execute("UPDATE ai_calls SET document_id=NULL WHERE document_id=?", (doc_id,))
+            con.execute("DELETE FROM documents WHERE id=?", (doc_id,))
+        dest.unlink(missing_ok=True)
+        raise HTTPException(502, "ai_busy")  # the page explains it in the family's language
     with db.connect() as con:
         ingest_item(con, case_id, extracted, stored, doc_id)
         audit.audit_case(con, case_id)  # a new document can change what the rules see (e.g. the case's body side)

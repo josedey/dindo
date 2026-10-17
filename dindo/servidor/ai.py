@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 import pypdfium2 as pdfium
-from openai import APIStatusError, OpenAI
+from openai import APIConnectionError, APIStatusError, APITimeoutError, OpenAI
 from PIL import Image, ImageOps
 
 from . import config, db
@@ -98,24 +98,29 @@ def chat(messages: list, model: str, purpose: str, case_id=None, document_id=Non
             _log(case_id, document_id, model, purpose, int((time.monotonic() - start) * 1000),
                  usage.prompt_tokens if usage else None, usage.completion_tokens if usage else None, True)
             return resp.choices[0].message.content or ""
-        except APIStatusError as e:
+        except (APIStatusError, APIConnectionError, APITimeoutError) as e:
             _log(case_id, document_id, model, purpose, int((time.monotonic() - start) * 1000), None, None, False)
-            # The gateway wraps an unavailable model as a 500 whose message says 503.
-            unavailable = e.status_code in (502, 503) or (e.status_code == 500 and re.search(r"503|unavailable", str(e), re.I))
-            if not (e.status_code == 429 or unavailable) or attempt == 3:
+            # Busy or briefly unavailable shared endpoint (the gateway also reports it as a plain 500): retry with backoff.
+            status = getattr(e, "status_code", None)
+            temporary = status is None or status in (429, 500, 502, 503, 504)
+            if not temporary or attempt == 2:
                 raise
-            retry_after = float(e.response.headers.get("retry-after") or 0)
+            retry_after = float(getattr(getattr(e, "response", None), "headers", {}).get("retry-after") or 0)
             time.sleep(max(retry_after, 2 ** attempt) + random.uniform(0, 1))
     raise RuntimeError("unreachable")
 
 
-def chat_with_fallback(messages: list, models: list[str], purpose: str, **kw) -> tuple[str, str]:
-    """Try each model in order (shared endpoints can go down); returns (text, model used)."""
+def chat_with_fallback(messages: list, models: list[str], purpose: str, check=None, **kw) -> tuple[str, str]:
+    """Try each model in order (shared endpoints can go down, a model can answer garbage); returns (text, model used).
+    `check` validates an answer (e.g. that it is JSON); an answer that fails it moves on to the next model."""
     last = None
     for m in [m for m in models if m]:
         try:
-            return chat(messages, m, purpose, **kw), m
-        except APIStatusError as e:
+            text = chat(messages, m, purpose, **kw)
+            if check:
+                check(text)
+            return text, m
+        except (APIStatusError, APIConnectionError, APITimeoutError, ValueError) as e:
             last = e
     raise last or RuntimeError("No model configured")
 
@@ -146,6 +151,7 @@ def image_parts(path: Path) -> list[dict]:
 
 
 def parse_json(text: str) -> dict:
+    text = re.sub(r"<think>.*?</think>", "", text or "", flags=re.S)  # a model that thinks out loud first
     text = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.M).strip()
     try:
         return json.loads(text)
@@ -164,8 +170,9 @@ def extract_document(path: Path, case: dict, insurer: dict | None, model: str | 
     messages = [{"role": "system", "content": EXTRACT_SYSTEM},
                 {"role": "user", "content": [{"type": "text", "text": context + f'\nFile name: "{path.name}". Return the JSON object.'},
                                              *image_parts(path)]}]
-    models = [model] if model else [config.AMD_VISION_MODEL, config.AMD_VISION_FALLBACK]
-    text, used = chat_with_fallback(messages, models, "extract", case_id=case_id, document_id=document_id, json_mode=True)
+    # Gemma first; if it fails or answers something that is not JSON, the fallback, then Gemma once more.
+    models = [model] if model else [config.AMD_VISION_MODEL, config.AMD_VISION_FALLBACK, config.AMD_VISION_MODEL]
+    text, used = chat_with_fallback(messages, models, "extract", check=parse_json, case_id=case_id, document_id=document_id, json_mode=True)
     out = parse_json(text)
     out["file"] = path.name
     out["_model"] = used
