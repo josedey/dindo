@@ -49,7 +49,7 @@ def anonymized_items() -> list[tuple[str, dict]]:
 
 
 def new_case(con, title, subject, kind, summary, members, insurer=None) -> int:
-    case_id = con.execute("INSERT INTO cases (title, subject_name, subject_kind, summary) VALUES (?,?,?,?)",
+    case_id = con.execute("INSERT INTO cases (title, subject_name, subject_kind, summary, replay) VALUES (?,?,?,?,1)",
                           (title, subject, kind, summary)).lastrowid
     con.executemany("INSERT INTO members (case_id, name, role, color) VALUES (?,?,?,?)", [(case_id, *m) for m in members])
     if insurer:

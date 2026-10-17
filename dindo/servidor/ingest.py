@@ -17,15 +17,21 @@ def norm(s: str | None) -> str:
     return " ".join(re.sub(r"[^a-z0-9 ]", " ", s).split())
 
 
+WORD_NUMBERS = {"una": 1, "un": 1, "dos": 2, "tres": 3, "cuatro": 4, "seis": 6}
+
+
 def every_hours(freq: str | None) -> int | None:
+    """Hours between doses from how prescriptions write it: "c/8h", "cada 12 horas", "2 veces x día", "x día", "diario"."""
     f = (freq or "").lower()
-    m = re.search(r"(\d+)\s*(h|hs|hrs|horas)\b", f)
-    if m:
+    for word, n in WORD_NUMBERS.items():
+        f = re.sub(rf"\b{word}\b", str(n), f)
+    m = re.search(r"(?:c\s*/\s*|cada\s+)?(\d+)\s*(h|hs|hrs|horas)\b", f) or re.search(r"(?:c\s*/\s*|cada\s+)(\d+)\b", f)
+    if m and 0 < int(m.group(1)) <= 72:
         return int(m.group(1))
-    m = re.search(r"(\d+)\s*(veces|vez)\s*(al|por)\s*d", f)
+    m = re.search(r"(\d+)\s*(veces|vez)\s*(al|por|x|/|a\s+el)?\s*d", f)
     if m and int(m.group(1)):
         return 24 // int(m.group(1))
-    return 24 if re.search(r"(cada|por|al)\s*d[ií]a|diari|24\s*h", f) else None
+    return 24 if re.search(r"(cada|por|al|x|/)\s*d[ií]a|diari|24\s*h|daily", f) else None
 
 
 def duration_days(d: str | None) -> int | None:
@@ -105,6 +111,11 @@ def unrelated(it: dict) -> str | None:
 def ingest_item(con: sqlite3.Connection, case_id: int, it: dict, file_path: str | None, doc_id: int | None = None) -> int:
     """Store a document and everything extracted from it. Returns the document id."""
     from .audit import other_patient  # local import: audit is a sibling module
+    kind = (db.row(con, "SELECT subject_kind FROM cases WHERE id=?", case_id) or {}).get("subject_kind")
+    if kind == "pet":  # a vet's paper is this case's own: never "not medical", never "not for a human"
+        if it.get("case_related") is False:
+            it["case_related"] = None  # only the restaurant-bill rule can still set it apart
+        it["anomalies"] = [a for a in it.get("anomalies") or [] if not re.search(r"animal|veterinari|human|mascota|perro|gato", str(a), re.I)]
     foreign = other_patient(con, case_id, it.get("patient_name_as_written")) or any(
         re.search(r"otro paciente|another patient", str(a), re.I) for a in it.get("anomalies") or [])
     not_medical = None if foreign else unrelated(it)  # another patient's paper is medical, just not this case's

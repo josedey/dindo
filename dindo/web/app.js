@@ -125,6 +125,17 @@ const setPal = (p) => {
   try { localStorage.setItem("dindo.pal." + th, p); } catch (_) {}
 };
 
+// ---------- each case's own date: demo cases are replayed on a fixed day, the family's cases run in real time ----------
+function applyCaseClock() {
+  const c = (state.cases || []).find((x) => x.id === state.caseId);
+  if (!c?.today) return;
+  state.config.today = c.today;
+  state.config.now = c.now;
+  const [h, m] = c.now.split(":").map(Number), d = new Date();
+  clockOffset = ((h * 60 + m) - (d.getHours() * 60 + d.getMinutes())) * 60000;
+  state.day = c.today;
+}
+
 // ---------- shell ----------
 const NAV = [
   ["g_day", [["hoy", "home"], ["calendario", "calendar"], ["tratamiento", "pill"], ["indicaciones", "clipboard"]]],
@@ -609,6 +620,32 @@ async function viewSubir() {
   drop.addEventListener("drop", (e) => { e.preventDefault(); drop.style.borderColor = ""; if (on) uploadFiles(e.dataTransfer.files); });
 }
 
+// What Dindo found in an uploaded paper, section by section, so the family sees exactly what was filed where.
+function uploadReport(d, secs) {
+  const L = d.linked || {}, x = d.extracted || {};
+  const phones = (c) => { try { return JSON.parse(c.phones || "[]"); } catch (_) { return [c.phones].filter(Boolean); } };
+  const block = (key, items, render, link) => items.length ? `<div class="ur-sec"><div class="ur-h"><b>${t("ur_" + key)} (${items.length})</b>${link ? `<a class="linkish" href="#${link}">${t("ur_see")} →</a>` : ""}</div>
+    <ul>${items.map((i) => `<li>${render(i)}</li>`).join("")}</ul></div>` : "";
+  const when = (m) => m.every_hours ? t("ur_every", { h: m.every_hours, t: m.first_time || "08:00" }) + (m.end_date ? " · " + t("until", { d: fdate(m.end_date) }) : "") : t("as_directed");
+  const warn = L.findings.filter((f) => f.kind === "patient" || f.kind === "not_medical");
+  const alerts = L.findings.filter((f) => !warn.includes(f));
+  const meta = [t("dt_" + d.doc_type), d.doc_date && fdate(d.doc_date), d.issuer, x.patient_name_as_written && t("ur_for", { n: x.patient_name_as_written })].filter(Boolean).map(esc).join(" · ");
+  const body = [
+    block("meds", L.medications, (m) => `<b>${esc(m.name)}</b>${m.dose ? " · " + esc(m.dose) : ""} — <span class="muted">${when(m)}</span>`, "tratamiento"),
+    block("events", L.events, (e) => `<b>${esc(e.title)}</b> — <span class="muted">${e.date ? fdate(e.date) : ""}${e.time ? " · " + e.time : ""}</span>`, "calendario"),
+    block("ins", L.instructions, (i) => `<span class="tag ${i.polarity === "avoid" ? "crit" : "ok"}">${t(i.polarity === "avoid" ? "avoid" : "do")}</span> ${esc(i.text)}${i.until ? ` <span class="muted">(${t("until", { d: fdate(i.until) })})</span>` : ""}`, "indicaciones"),
+    block("tasks", L.tasks, (k) => esc(k.title), "examenes"),
+    block("money", L.expenses, (e) => `<b>${money(e.amount)}</b> · ${t("cat_" + e.category)}${e.reimbursable ? ` · <span class="tag ok plain">${t("reimbursable")}</span>` : ""}`, "gastos"),
+    block("contacts", L.contacts, (c) => `<b>${esc(c.name)}</b>${c.role ? " · " + esc(c.role) : ""}${phones(c).length ? " · " + esc(phones(c)[0]) : ""}`, "contactos"),
+    block("alerts", alerts, (f) => `${sevTag(f.severity)} ${esc(f.detail)}`, "alertas"),
+    block("questions", L.questions, (q) => esc(q.question), "preguntas"),
+  ].join("");
+  return `<div class="ur-top"><button class="linkish ur-title" data-doc="${d.id}">${esc(d.title)}</button><span class="small muted">${esc(x._model || "")} · ${secs.toFixed(0)} s</span></div>
+    <span class="small muted">${meta}</span>
+    ${warn.map((f) => `<div class="callout ${f.kind === "patient" ? "crit" : ""}" style="margin:6px 0 0">${esc(f.detail)}</div>`).join("")}
+    ${body ? `<div class="ur-body"><span class="lbl">${t("ur_found")}</span>${body}</div>` : `<span class="small muted">${t("ur_nothing")}</span>`}`;
+}
+
 async function uploadFiles(files) {
   $("#up-sec").hidden = false;
   const list = $("#up-list");
@@ -629,11 +666,7 @@ async function uploadFiles(files) {
         const res = await fetch(C("/documents"), { method: "POST", body: fd });
         const d = await res.json();
         if (!res.ok) throw new Error(d.detail || res.status);
-        const counts = Object.entries(d.linked).filter(([, v]) => v.length).map(([k, v]) => `${v.length} ${t("lk_" + k)}`).join(" · ");
-        const al = d.linked.findings.filter((x) => x.severity !== "info");
-        row.innerHTML = `<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><button class="linkish" data-doc="${d.id}" style="font-size:15px;font-weight:600;color:var(--ink)">${esc(d.title)}</button><span class="tag">${t("dt_" + d.doc_type)}</span></div>
-          <span class="meta">${counts || "—"}</span><span class="small muted">${esc(d.extracted?._model || "")} · ${((performance.now() - t0) / 1000).toFixed(0)} s</span>
-          ${al.map((x) => `<span class="small" style="color:${x.severity === "critical" ? "var(--crit)" : "var(--warn)"}">${esc(x.detail)}</span>`).join("")}`;
+        row.innerHTML = uploadReport(d, (performance.now() - t0) / 1000);
       } catch (err) {
         row.innerHTML = `<b>${esc(f.name)}</b><span class="small" style="color:var(--crit)">${t("read_error")}: ${esc(err.message)}</span>`;
       }
@@ -851,6 +884,7 @@ document.addEventListener("click", async (ev) => {
     state.caseId = Number(ds.case);
     try { localStorage.setItem("dindo.case", state.caseId); } catch (_) {}
     Object.assign(state, { summary: null, calSel: null, calMonth: null, expCat: null, docType: null });
+    applyCaseClock();
     $("#modal").hidden = true;
     return route();
   }
@@ -933,6 +967,7 @@ document.addEventListener("submit", async (e) => {
     state.caseId = c.id;
     try { localStorage.setItem("dindo.case", c.id); } catch (_) {}
     Object.assign(state, { summary: null, calSel: null, calMonth: null, expCat: null, docType: null, member: null });
+    applyCaseClock();
     $("#modal").hidden = true;
     toast(t("nc_done"));
     location.hash = "#subir";
@@ -998,6 +1033,7 @@ window.addEventListener("hashchange", () => { $("#modal").hidden = true; route()
   state.cases = await api("/api/cases");
   if (!state.cases.some((c) => c.id === state.caseId)) state.caseId = state.cases[0]?.id || 1;
   state.day = state.config.today;
+  applyCaseClock();
   await route();
   if (new URLSearchParams(location.search).get("open") === "menu") openMenu();  // deep link to the phone menu
   try { navigator.serviceWorker?.register("/sw.js"); } catch (_) {}

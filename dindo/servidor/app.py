@@ -18,6 +18,24 @@ ALLOWED_UPLOADS = {".jpg", ".jpeg", ".png", ".webp", ".pdf"}
 app = FastAPI(title="Dindo")
 db.init()
 
+CASE_PATH = re.compile(r"/api/cases/(\d+)")
+
+
+@app.middleware("http")
+async def case_clock(request, call_next):
+    """Demo cases are replayed on DINDO_TODAY / DINDO_TIME; a case the family created runs on the real date and time."""
+    m = CASE_PATH.match(request.url.path)
+    replay = True
+    if m:
+        with db.connect() as con:
+            row = db.row(con, "SELECT replay FROM cases WHERE id=?", int(m.group(1)))
+        replay = bool(row and row["replay"])
+    token = config.replaying(replay)
+    try:
+        return await call_next(request)
+    finally:
+        config.reset_replay(token)
+
 LINKED = ("expenses", "medications", "events", "contacts", "tasks", "findings", "questions", "instructions")
 
 CONTACT_GROUPS = [  # (group, words in role/name/organization)
@@ -178,7 +196,10 @@ def get_config():
 @app.get("/api/cases")
 def list_cases():
     with db.connect() as con:
-        return db.rows(con, "SELECT * FROM cases ORDER BY id")
+        cases = db.rows(con, "SELECT * FROM cases ORDER BY id")
+    for c in cases:  # each case's own "today" and clock (demo cases are replayed)
+        c["today"], c["now"] = config.today(bool(c.get("replay"))).isoformat(), config.now_hm(bool(c.get("replay")))
+    return cases
 
 
 @app.post("/api/cases")

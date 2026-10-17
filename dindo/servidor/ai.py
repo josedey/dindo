@@ -43,7 +43,7 @@ Rules:
 - A product offer or price quote (a budget, a Facebook/marketplace post, a price screenshot) is doc_type "quote":
   product and price in line_items, seller in issuer, seller phone in contacts. It is not an expense.
 - Add a key "case_related": false when the document has nothing to do with the patient's health case (a restaurant or
-  food bill, groceries, personal shopping unrelated to care), with the reason in Spanish in "unrelated_reason"; true otherwise.
+  food bill, groceries, personal shopping unrelated to care; in a pet's case, veterinary papers ARE related), with the reason in Spanish in "unrelated_reason"; true otherwise.
 - Photos of the injury and X-ray/imaging photos: describe them neutrally in "notes" (what is visible), never
   interpret them medically.
 - Every event needs a short "title" (max 5 words, like a calendar entry: "Control – Dr. Añez", "TAC de rodilla",
@@ -157,9 +157,10 @@ def parse_json(text: str) -> dict:
 def extract_document(path: Path, case: dict, insurer: dict | None, model: str | None = None,
                      case_id=None, document_id=None) -> dict:
     """Read one document photo with the AMD vision model and return it in the ground-truth schema."""
+    pet = case.get("subject_kind") == "pet"
     context = (f"Case: {case['title']} ({case.get('summary') or ''}). Patient/subject: {case['subject_name']} "
-               f"({'pet' if case.get('subject_kind') == 'pet' else 'person'}). "
-               f"Insurer: {insurer['insurer']} NIT {insurer['nit']}." if insurer else "No insurer.")
+               f"({'a pet: veterinary papers belong to this case' if pet else 'a person'}). "
+               + (f"Insurer: {insurer['insurer']} NIT {insurer['nit']}." if insurer else "No insurer."))
     messages = [{"role": "system", "content": EXTRACT_SYSTEM},
                 {"role": "user", "content": [{"type": "text", "text": context + f'\nFile name: "{path.name}". Return the JSON object.'},
                                              *image_parts(path)]}]

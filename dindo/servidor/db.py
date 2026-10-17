@@ -185,6 +185,10 @@ def init() -> None:
         cols = {r[1] for r in con.execute("PRAGMA table_info(insurance)")}
         if "claim_rule" not in cols:  # 'end_of_month': invoices must be submitted within their own month
             con.execute("ALTER TABLE insurance ADD COLUMN claim_rule TEXT")
+        if "replay" not in {r[1] for r in con.execute("PRAGMA table_info(cases)")}:
+            # replay = 1: a demo case shown as of DINDO_TODAY / DINDO_TIME; cases the family creates live in real time
+            con.execute("ALTER TABLE cases ADD COLUMN replay INTEGER DEFAULT 0")
+            con.execute("UPDATE cases SET replay=1 WHERE title != 'Gato Cerafin'")
 
 
 def claim_due(policy: dict | None, invoice_date: str | None):

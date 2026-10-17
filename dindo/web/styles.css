@@ -508,3 +508,13 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: 14.5px; }
 .evo-body > * { max-width: 100%; }
 
 .fld { display: grid; gap: 6px; }
+
+/* Upload report: everything found in the paper, by section */
+.ur-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ur-title { font-size: 16px; font-weight: 700; color: var(--ink); text-align: left; }
+.ur-body { display: grid; gap: 12px; margin-top: 10px; padding: 14px 16px; background: var(--sheet2); border: 1px solid var(--line); border-radius: 10px; }
+.ur-sec { display: grid; gap: 4px; }
+.ur-h { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.ur-h b { font-size: 14.5px; color: var(--ink); }
+.ur-sec ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; color: var(--ink2); }
+.ur-sec li b { color: var(--ink); font-weight: 600; }
