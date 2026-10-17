@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dindo cover</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root { --teal: #0F4C5C; --teal2: #167D8D; --ink: #12262D; --mute: #4F6469; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1920px; height: 1080px; overflow: hidden; font-family: "IBM Plex Sans", sans-serif; color: var(--ink);
+    background: radial-gradient(1200px 700px at 78% 40%, #D9F0E8 0%, rgba(217,240,232,0) 70%), linear-gradient(135deg, #F5F8F6 0%, #EAF3F0 100%); position: relative; }
+  .wave { position: absolute; left: -100px; right: -100px; bottom: -230px; height: 420px; border-radius: 50%;
+    background: linear-gradient(90deg, #0F4C5C 0%, #167D8D 55%, #5DCB8A 100%); opacity: .95; }
+  .left { position: absolute; left: 120px; top: 150px; width: 820px; }
+  .brand { display: flex; align-items: center; gap: 28px; }
+  .brand svg { width: 170px; height: 153px; }
+  .wm { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 150px; line-height: .9; color: #0D4F5F; letter-spacing: .01em; }
+  .tag { font-size: 40px; color: var(--mute); margin-top: 18px; }
+  h2 { font-family: "Nunito", sans-serif; font-weight: 800; font-size: 50px; line-height: 1.15; margin: 70px 0 26px; color: var(--ink); }
+  .pills { display: flex; flex-wrap: wrap; gap: 14px; max-width: 800px; }
+  .pill { font-size: 25px; font-weight: 600; padding: 12px 22px; border-radius: 999px; background: #fff; border: 2px solid #CFE3DD; color: var(--teal); }
+  .amd { position: absolute; left: 120px; bottom: 70px; color: #fff; font-size: 30px; font-weight: 600; letter-spacing: .02em; }
+  .amd b { font-weight: 800; }
+  .shots { position: absolute; right: 90px; top: 110px; width: 900px; height: 820px; }
+  .desk { position: absolute; right: 120px; top: 40px; width: 760px; border-radius: 16px; overflow: hidden;
+    box-shadow: 0 30px 70px -20px rgba(15,76,92,.45); border: 1px solid #C9DAD5; background: #fff; }
+  .desk img { width: 100%; display: block; }
+  .phone { position: absolute; right: 0; top: 230px; width: 300px; border-radius: 40px; padding: 12px; background: #10262C;
+    box-shadow: 0 30px 70px -15px rgba(15,76,92,.6); }
+  .phone img { width: 100%; display: block; border-radius: 30px; }
+</style>
+</head>
+<body>
+  <div class="wave"></div>
+  <div class="left">
+    <div class="brand">
+      <svg viewBox="0 0 120 108"><defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0B5F86"/><stop offset=".55" stop-color="#138C8A"/><stop offset="1" stop-color="#5DCB8A"/></linearGradient></defs><path d="M60 104C22 80 4 58 4 35 4 17 18 4 35 4c11 0 20 6 25 15C65 10 74 4 85 4c17 0 31 13 31 31 0 23-18 45-56 69z" fill="url(#g)"/><path d="M10 60c26 30 70 32 104-14" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".95"/><rect x="31" y="33" width="38" height="13" rx="3" fill="#fff"/><rect x="43.5" y="20.5" width="13" height="38" rx="3" fill="#fff"/></svg>
+      <div><div class="wm">DINDO</div></div>
+    </div>
+    <div class="tag">Your health, with you every step.</div>
+    <h2>Photograph any medical paper.<br>AI on AMD GPUs organizes and audits the whole case.</h2>
+    <div class="pills">
+      <span class="pill">Doses &amp; reminders</span><span class="pill">Expenses &amp; insurance</span>
+      <span class="pill">Diagnoses &amp; test orders</span><span class="pill">Error audit</span><span class="pill">Ask your case</span>
+    </div>
+  </div>
+  <div class="amd"><b>Gemma 4 + DeepSeek</b> on AMD Token Factory · AMD Developer Hackathon ACT III · Health &amp; Wellbeing</div>
+  <div class="shots">
+    <div class="desk"><img src="../img/hoy.png" alt=""></div>
+    <div class="phone"><img src="../img/phone-hoy.png" alt=""></div>
+  </div>
+</body>
+</html>
