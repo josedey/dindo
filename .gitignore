@@ -25,3 +25,7 @@ demo/caso-sintetico/eval/
 
 # Anonymizer log: it lists the personal data that was covered
 demo/caso-demo/ocr_matches.txt
+
+# Android package and its signing key (keep private, needed to publish updates)
+android/
+

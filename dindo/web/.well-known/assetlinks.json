@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.onrender.dindo_vgpq.twa",
+        "sha256_cert_fingerprints": ["29:2F:77:24:7B:26:08:7B:E1:05:BE:5E:63:33:38:B0:98:A4:FE:AD:1F:09:3F:AB:5F:88:38:39:A7:6A:7C:54"]
+      }
+    }]
