@@ -69,11 +69,11 @@ def other_patient(con, case_id: int, written: str | None) -> str | None:
 
 def rule_findings(con, case_id: int, doc: dict, x: dict) -> list[tuple[str, str, str]]:
     """(severity, kind, detail) for one document."""
-    if x.get("not_medical"):  # a restaurant bill and the like: one friendly note, none of the insurance rules
+    other = other_patient(con, case_id, x.get("patient_name_as_written"))
+    if x.get("not_medical") and not other:  # a restaurant bill and the like: one friendly note, none of the insurance rules
         return [("info", "not_medical", f"{x['not_medical']} La guardamos en «No médicos», aparte de los gastos de salud. "
                                         "Sirve para saber cuánto se gastó en total; normalmente el seguro no la cubre.")]
     out = []
-    other = other_patient(con, case_id, x.get("patient_name_as_written"))
     if other:
         out.append(("warning", "patient", other))
     doc_date = date.fromisoformat(doc["doc_date"]) if doc["doc_date"] else None

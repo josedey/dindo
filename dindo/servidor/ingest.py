@@ -73,6 +73,8 @@ def better_category(category: str | None, text: str) -> str:
 def classify_anomaly(text: str) -> tuple[str, str] | None:
     """(severity, kind) for an anomaly sentence, or None if it is noise."""
     low = text.lower()
+    if re.search(r"otro paciente|another patient|different patient", low):
+        return "warning", "patient"
     if any(w in low for w in ("duplic", "no relacionad", "unrelated", "publicidad", "anuncio", "ilegible", "lectura dudosa")):
         return None
     if re.search(r"derech|izquierd|right|left|lado", low):
@@ -102,7 +104,10 @@ def unrelated(it: dict) -> str | None:
 
 def ingest_item(con: sqlite3.Connection, case_id: int, it: dict, file_path: str | None, doc_id: int | None = None) -> int:
     """Store a document and everything extracted from it. Returns the document id."""
-    not_medical = unrelated(it)
+    from .audit import other_patient  # local import: audit is a sibling module
+    foreign = other_patient(con, case_id, it.get("patient_name_as_written")) or any(
+        re.search(r"otro paciente|another patient", str(a), re.I) for a in it.get("anomalies") or [])
+    not_medical = None if foreign else unrelated(it)  # another patient's paper is medical, just not this case's
     if not_medical:  # kept, but filed apart from the health expenses and never sent to the insurer
         it["not_medical"] = not_medical
         it["anomalies"] = [a for a in it.get("anomalies") or [] if not re.search(r"asegurador|seguro|nombre|nit|insur", str(a), re.I)]
@@ -128,6 +133,8 @@ def ingest_item(con: sqlite3.Connection, case_id: int, it: dict, file_path: str 
     else:
         doc_id = con.execute("""INSERT INTO documents (doc_type, title, doc_date, issuer, file_path, handwritten, summary,
                                 extracted_json, case_id) VALUES (?,?,?,?,?,?,?,?,?)""", (*values, case_id)).lastrowid
+    if foreign:  # keep the paper and its warning, but put nothing of it in this patient's schedule or expenses
+        it = {**it, "medications": [], "events": [], "instructions": [], "studies_requested": [], "total": None}
 
     policy = db.row(con, "SELECT nit FROM insurance WHERE case_id=?", case_id)
     insurer_nit = (policy or {}).get("nit") or ""
