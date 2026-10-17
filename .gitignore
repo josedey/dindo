@@ -1,0 +1,27 @@
+# Secrets
+.env
+
+# Runtime data (database and uploaded files)
+data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Large medical image archives (too big for GitHub)
+*.iso
+*.rar
+
+# OS
+Thumbs.db
+.DS_Store
+
+# José's unredacted documents and full transcription: local only, never public
+demo/accidente-jose/
+# Benchmark outputs
+demo/caso-sintetico/eval/
+
+
+# Anonymizer log: it lists the personal data that was covered
+demo/caso-demo/ocr_matches.txt

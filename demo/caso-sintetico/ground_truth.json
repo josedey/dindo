@@ -1,0 +1,548 @@
+[
+  {
+    "file": "01_factura_fisioterapia.jpg",
+    "doctor": null,
+    "patient_name_as_written": "Daniel Vargas Suárez",
+    "billed_to": "Seguros Andina S.A.",
+    "billed_to_nit": "1020304050",
+    "invoice_number": "002417",
+    "line_items": [
+      {
+        "description": "Paq. 10 sesiones de fisioterapia",
+        "amount": 1800
+      },
+      {
+        "description": "Descuento",
+        "amount": -180
+      }
+    ],
+    "total": 1620,
+    "currency": "BOB",
+    "expense_category": "therapy",
+    "medications": [],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [
+      {
+        "kind": "session",
+        "date": "2022-12-02",
+        "description": "Inicio de 10 sesiones de fisioterapia (hasta 27/12/2022)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "FisioActiva S.R.L.",
+        "role_or_specialty": "Fisioterapia",
+        "phones": [
+          "3-310200"
+        ],
+        "email": null,
+        "organization": "FisioActiva S.R.L.",
+        "address": "Av. Beni N° 455, Zona Norte"
+      }
+    ],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [
+      "La factura está fechada el 09/01/2022 pero cobra sesiones del 02/12/2022 al 27/12/2022: la fecha es anterior al servicio (probablemente 2023). El seguro podría rechazarla."
+    ],
+    "notes": null,
+    "doc_type": "invoice",
+    "title": "Factura FisioActiva N.º 002417",
+    "date": "2022-01-09",
+    "issuer": "FisioActiva S.R.L."
+  },
+  {
+    "file": "02_receta_anticoagulante.jpg",
+    "doctor": {
+      "name": "Dr. Andrés Paz Montaño",
+      "specialty": "Cirugía vascular",
+      "license": "P-1187"
+    },
+    "patient_name_as_written": "Daniel Vargas Suárez",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [
+      {
+        "name": "Apixabán",
+        "dose": "5 mg",
+        "frequency": "cada 12 horas",
+        "duration": "6 meses",
+        "instructions": "1 comprimido"
+      },
+      {
+        "name": "Tramadol",
+        "dose": "50 mg",
+        "frequency": "cada 8 horas",
+        "duration": "5 días",
+        "instructions": "si hay dolor"
+      }
+    ],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [],
+    "contacts": [],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [],
+    "notes": "Indica además medias de compresión 20-30 mmHg.",
+    "doc_type": "prescription",
+    "title": "Receta Dr. Paz Montaño (anticoagulante)",
+    "date": "2023-01-20",
+    "issuer": "Dr. Andrés Paz Montaño"
+  },
+  {
+    "file": "03_orden_tomografia.jpg",
+    "doctor": {
+      "name": "Dr. Marcelo Antelo Ribera",
+      "specialty": "Traumatología",
+      "license": "A-2290"
+    },
+    "patient_name_as_written": "Vargas Suárez Daniel",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [],
+    "studies_requested": [
+      {
+        "name": "Tomografía de rodilla sin contraste con reconstrucción",
+        "body_side": "right",
+        "reason": "Dolor persistente"
+      }
+    ],
+    "diagnosis_text": "Z54.4 Convalecencia consecutiva a tratamiento de fractura",
+    "events": [],
+    "contacts": [
+      {
+        "name": "Clínica Santa Lucía",
+        "role_or_specialty": "Clínica",
+        "phones": [
+          "3-336000"
+        ],
+        "email": null,
+        "organization": "Clínica Santa Lucía",
+        "address": "Av. Irala 900"
+      }
+    ],
+    "handwritten": false,
+    "legibility": "good",
+    "anomalies": [
+      "La orden pide tomografía de rodilla DERECHA, pero la lesión del paciente es la rodilla IZQUIERDA (resto del caso). Confirmar con el médico antes de hacer el estudio.",
+      "Figura 'Sin Seguro' aunque el paciente tiene seguro (Seguros Andina S.A.)."
+    ],
+    "notes": null,
+    "doc_type": "study_order",
+    "title": "Solicitud de tomografía de rodilla (Clínica Santa Lucía)",
+    "date": "2022-12-14",
+    "issuer": "Clínica Santa Lucía"
+  },
+  {
+    "file": "04_informe_medico.jpg",
+    "doctor": {
+      "name": "Dr. Iván Rocha Ortiz",
+      "specialty": "Traumatología",
+      "license": "R-0931"
+    },
+    "patient_name_as_written": "Daniel Vargas Suárez",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [],
+    "studies_requested": [
+      {
+        "name": "Resonancia magnética de rodilla",
+        "body_side": "left",
+        "reason": "Descartar lesión meniscal"
+      }
+    ],
+    "diagnosis_text": "Osteosíntesis de meseta tibial izquierda y posible lesión meniscal de rodilla izquierda",
+    "events": [],
+    "contacts": [
+      {
+        "name": "Dr. Iván Rocha Ortiz",
+        "role_or_specialty": "Traumatología",
+        "phones": [
+          "3-345870"
+        ],
+        "email": null,
+        "organization": "Médicos Unidos",
+        "address": "C/ Sucre 340"
+      }
+    ],
+    "handwritten": true,
+    "legibility": "fair",
+    "anomalies": [],
+    "notes": null,
+    "doc_type": "medical_report",
+    "title": "Informe médico Dr. Rocha (Médicos Unidos)",
+    "date": "2022-12-02",
+    "issuer": "Médicos Unidos"
+  },
+  {
+    "file": "05_factura_clinica.jpg",
+    "doctor": null,
+    "patient_name_as_written": null,
+    "billed_to": "Seguros Andina S.A.",
+    "billed_to_nit": "1020304050",
+    "invoice_number": "018832",
+    "line_items": [
+      {
+        "description": "Consulta traumatología",
+        "amount": 300
+      },
+      {
+        "description": "Rx rodilla izquierda AP y lateral",
+        "amount": 450
+      },
+      {
+        "description": "Descuento 10%",
+        "amount": -75
+      }
+    ],
+    "total": 700,
+    "currency": "BOB",
+    "expense_category": "lab_imaging",
+    "medications": [],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [
+      {
+        "kind": "appointment",
+        "date": "2022-12-14",
+        "description": "Consulta de traumatología y radiografía de rodilla izquierda"
+      }
+    ],
+    "contacts": [],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [
+      "Error de suma: 300 + 450 - 75 = 675 Bs, pero el total escrito es 700 Bs (25 Bs de más)."
+    ],
+    "notes": null,
+    "doc_type": "invoice",
+    "title": "Factura Clínica Santa Lucía N.º 018832",
+    "date": "2022-12-14",
+    "issuer": "Clínica Santa Lucía S.A."
+  },
+  {
+    "file": "06_factura_farmacia.jpg",
+    "doctor": null,
+    "patient_name_as_written": null,
+    "billed_to": "Daniel Vargas",
+    "billed_to_nit": "6123457",
+    "invoice_number": "145520",
+    "line_items": [
+      {
+        "description": "Apixabán 5 mg x 60 comp.",
+        "amount": 312.5
+      },
+      {
+        "description": "Medias compresión 20-30",
+        "amount": 74
+      }
+    ],
+    "total": 386.5,
+    "currency": "BOB",
+    "expense_category": "medication",
+    "medications": [],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [],
+    "contacts": [],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [
+      "La factura está a nombre del paciente (Daniel Vargas, CI 6123457) y no del seguro Seguros Andina S.A. (NIT 1020304050): no sería reembolsable. Pedir que la rehagan."
+    ],
+    "notes": null,
+    "doc_type": "invoice",
+    "title": "Factura FarmaSalud N.º 145520",
+    "date": "2023-01-20",
+    "issuer": "FarmaSalud S.R.L."
+  },
+  {
+    "file": "07_derivacion_ecodoppler.jpg",
+    "doctor": {
+      "name": "Dr. Andrés Paz Montaño",
+      "specialty": "Cirugía vascular",
+      "license": "P-1187"
+    },
+    "patient_name_as_written": "Daniel V. Suárez",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [],
+    "studies_requested": [
+      {
+        "name": "Ecodoppler venoso de miembro inferior",
+        "body_side": "left",
+        "reason": "Síndrome postrombótico"
+      }
+    ],
+    "diagnosis_text": "Síndrome postrombótico",
+    "events": [],
+    "contacts": [
+      {
+        "name": "Dr. Andrés Paz Montaño",
+        "role_or_specialty": "Cirugía vascular",
+        "phones": [
+          "3-344556",
+          "70011223",
+          "76655443"
+        ],
+        "email": "andres.paz@correo-ficticio.bo",
+        "organization": "Centro Vascular Oriente",
+        "address": null
+      }
+    ],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [],
+    "notes": "76655443 es el teléfono de la secretaria.",
+    "doc_type": "study_order",
+    "title": "Orden de ecodoppler venoso (Dr. Paz Montaño)",
+    "date": "2023-01-20",
+    "issuer": "Centro Vascular Oriente"
+  },
+  {
+    "file": "08_asistencia_fisioterapia.jpg",
+    "doctor": null,
+    "patient_name_as_written": "DANIEL VARGAS SUÁREZ",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [
+      {
+        "kind": "session",
+        "date": "2022-12-02",
+        "description": "Sesión de fisioterapia 1 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-05",
+        "description": "Sesión de fisioterapia 2 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-07",
+        "description": "Sesión de fisioterapia 3 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-09",
+        "description": "Sesión de fisioterapia 4 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-12",
+        "description": "Sesión de fisioterapia 5 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-14",
+        "description": "Sesión de fisioterapia 6 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-16",
+        "description": "Sesión de fisioterapia 7 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-19",
+        "description": "Sesión de fisioterapia 8 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-21",
+        "description": "Sesión de fisioterapia 9 de 10"
+      },
+      {
+        "kind": "session",
+        "date": "2022-12-27",
+        "description": "Sesión de fisioterapia 10 de 10"
+      }
+    ],
+    "contacts": [],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [],
+    "notes": "Coincide con la factura FisioActiva N.º 002417 (10 sesiones del 02 al 27/12/2022).",
+    "doc_type": "attendance_sheet",
+    "title": "Asistencia a fisioterapia FisioActiva (10 sesiones)",
+    "date": "2022-12-27",
+    "issuer": "FisioActiva S.R.L."
+  },
+  {
+    "file": "09_citacion_audiencia.jpg",
+    "doctor": null,
+    "patient_name_as_written": "Daniel Vargas Suárez",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [
+      {
+        "kind": "hearing",
+        "date": "2023-11-05",
+        "description": "Audiencia de conciliación, 09:00, Sala 4, Juzgado de Instrucción Penal Tercero (Palacio de Justicia, piso 2)"
+      }
+    ],
+    "contacts": [
+      {
+        "name": "Abg. Javier Rojas Terrazas",
+        "role_or_specialty": "Abogado de la víctima",
+        "phones": [
+          "71122334"
+        ],
+        "email": null,
+        "organization": null,
+        "address": null
+      },
+      {
+        "name": "Dra. Lorena Ibáñez Cuéllar",
+        "role_or_specialty": "Fiscal",
+        "phones": [],
+        "email": null,
+        "organization": "Fiscalía",
+        "address": null
+      }
+    ],
+    "handwritten": false,
+    "legibility": "good",
+    "anomalies": [],
+    "notes": "Caso penal por lesiones en accidente de tránsito; imputado Rodrigo Medina Flores.",
+    "doc_type": "legal",
+    "title": "Citación a audiencia de conciliación (Caso FIS-SCZ-2210457)",
+    "date": "2023-10-18",
+    "issuer": "Juzgado de Instrucción Penal Tercero, Santa Cruz"
+  },
+  {
+    "file": "10_recibo_ambulancia.jpg",
+    "doctor": null,
+    "patient_name_as_written": null,
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [
+      {
+        "description": "Traslado en ambulancia del 2º piso a fisioterapia",
+        "amount": 350
+      }
+    ],
+    "total": 350,
+    "currency": "BOB",
+    "expense_category": "transport",
+    "medications": [],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [],
+    "contacts": [
+      {
+        "name": "Ambulancias Rápido Auxilio",
+        "role_or_specialty": "Ambulancia",
+        "phones": [
+          "77788990"
+        ],
+        "email": null,
+        "organization": "Ambulancias Rápido Auxilio",
+        "address": null
+      }
+    ],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [
+      "Es un recibo simple, no una factura con NIT: el seguro normalmente no lo reembolsa."
+    ],
+    "notes": null,
+    "doc_type": "receipt",
+    "title": "Recibo de ambulancia N.º 0381",
+    "date": "2022-12-05",
+    "issuer": "Ambulancias Rápido Auxilio"
+  },
+  {
+    "file": "11_receta_veterinaria.jpg",
+    "doctor": {
+      "name": "M.V. Paula Gil Rivero",
+      "specialty": "Medicina veterinaria",
+      "license": null
+    },
+    "patient_name_as_written": "Toby",
+    "billed_to": null,
+    "billed_to_nit": null,
+    "invoice_number": null,
+    "line_items": [],
+    "total": null,
+    "currency": null,
+    "expense_category": null,
+    "medications": [
+      {
+        "name": "Doxiciclina",
+        "dose": "1/4 comprimido de 100 mg",
+        "frequency": "cada 24 horas",
+        "duration": "25 días",
+        "instructions": null
+      },
+      {
+        "name": "Ferrocan",
+        "dose": "3 ml",
+        "frequency": "cada 24 horas",
+        "duration": "15 días",
+        "instructions": "después de la comida"
+      }
+    ],
+    "studies_requested": [],
+    "diagnosis_text": null,
+    "events": [],
+    "contacts": [
+      {
+        "name": "Clínica Veterinaria Patitas",
+        "role_or_specialty": "Veterinaria",
+        "phones": [
+          "69900112"
+        ],
+        "email": null,
+        "organization": "Clínica Veterinaria Patitas",
+        "address": "Av. Piraí 777"
+      }
+    ],
+    "handwritten": true,
+    "legibility": "good",
+    "anomalies": [],
+    "notes": "Paciente: Toby, perro de 4 años y 12 kg; propietario Daniel Vargas. Pertenece al caso de la mascota.",
+    "doc_type": "prescription",
+    "title": "Receta veterinaria de Toby (Clínica Patitas)",
+    "date": "2024-05-24",
+    "issuer": "Clínica Veterinaria Patitas"
+  }
+]

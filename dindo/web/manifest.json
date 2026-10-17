@@ -1,0 +1,10 @@
+{
+  "name": "Dindo",
+  "short_name": "Dindo",
+  "description": "Gestor de casos de salud con IA en GPUs AMD",
+  "start_url": "/#hoy",
+  "display": "standalone",
+  "background_color": "#D9E7E5",
+  "theme_color": "#0D4F5F",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

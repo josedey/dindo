@@ -1,0 +1,8 @@
+.env
+.venv
+data
+**/__pycache__
+demo/caso-sintetico/eval
+*.iso
+*.rar
+demo/accidente-jose

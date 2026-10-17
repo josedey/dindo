@@ -1,0 +1,2188 @@
+[
+  {
+    "out": "01_ingreso_emergencia.jpg",
+    "src": "NUEVA CARPETA/20220704_204853.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.33,
+        0.148,
+        0.39,
+        0.182
+      ]
+    ]
+  },
+  {
+    "out": "02_orden_radiografias.jpg",
+    "src": "NUEVA CARPETA/IMG_20220704_200545.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.37,
+        0.215,
+        0.985,
+        0.27
+      ]
+    ]
+  },
+  {
+    "out": "03_factura_farmacia.jpg",
+    "src": "NUEVA CARPETA/IMG_20220711_174346.jpg",
+    "case": "real"
+  },
+  {
+    "out": "04_informe_postoperatorio.jpg",
+    "src": "NUEVA CARPETA/IMG_20220715_092308.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.27,
+        0.235,
+        0.41,
+        0.29
+      ],
+      [
+        0.55,
+        0.23,
+        0.79,
+        0.29
+      ]
+    ]
+  },
+  {
+    "out": "05_factura_silla_ruedas.jpg",
+    "src": "NUEVA CARPETA/IMG_20220719_105625.jpg",
+    "case": "real"
+  },
+  {
+    "out": "06_recibo_descuento.jpg",
+    "src": "NUEVA CARPETA/20221006_081154.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.2,
+        0.735,
+        0.69,
+        0.865
+      ]
+    ]
+  },
+  {
+    "out": "07_orden_fisioterapia.jpg",
+    "src": "NUEVA CARPETA/20221006_081233.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.14,
+        0.07,
+        0.197,
+        0.72
+      ]
+    ]
+  },
+  {
+    "out": "08_asistencia_fisioterapia.jpg",
+    "src": "DICIEMBRE 5 2022/Listado de Asistencia.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.51,
+        0.25,
+        0.93,
+        0.565
+      ]
+    ]
+  },
+  {
+    "out": "09_factura_fisioterapia_anio.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FISIOTERAPIA/WhatsApp Image 2023-01-15 at 18.41.40.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.4,
+        0.635,
+        0.63,
+        0.725
+      ]
+    ]
+  },
+  {
+    "out": "10_factura_consulta.jpg",
+    "src": "DICIEMBRE 5 2022 CONSULTA MEDICA/WhatsApp Image 2022-12-05 at 08.52.43.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.21,
+        0.705,
+        0.68,
+        0.748
+      ]
+    ]
+  },
+  {
+    "out": "11_informe_medico_manuscrito.jpg",
+    "src": "CONSULTAS CON EL MEDICO/02122022/WhatsApp Image 2023-01-15 at 18.32.42.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.4,
+        0.285,
+        0.93,
+        0.333
+      ]
+    ]
+  },
+  {
+    "out": "12_receta_indicaciones.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.37.24.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.68,
+        0.153,
+        0.8,
+        0.174
+      ],
+      [
+        0.43,
+        0.393,
+        0.7,
+        0.417
+      ]
+    ]
+  },
+  {
+    "out": "13_orden_tomografia.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.37.56.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.4,
+        0.138,
+        0.62,
+        0.16
+      ]
+    ]
+  },
+  {
+    "out": "14_derivacion_ecodoppler.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230202_081553.png",
+    "case": "real",
+    "boxes": [
+      [
+        0.14,
+        0.76,
+        0.64,
+        0.83
+      ]
+    ]
+  },
+  {
+    "out": "15_receta_anticoagulante.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230202_081648.png",
+    "case": "real",
+    "boxes": [
+      [
+        0.44,
+        0.21,
+        0.65,
+        0.29
+      ],
+      [
+        0.11,
+        0.785,
+        0.63,
+        0.845
+      ]
+    ]
+  },
+  {
+    "out": "16_informe_tomografia.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230222_083405.png",
+    "case": "real",
+    "boxes": [
+      [
+        0.265,
+        0.033,
+        0.57,
+        0.117
+      ]
+    ]
+  },
+  {
+    "out": "17_citacion_fiscalia.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0005.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.25,
+        0.368,
+        0.42,
+        0.412
+      ],
+      [
+        0.36,
+        0.42,
+        0.975,
+        0.45
+      ],
+      [
+        0.02,
+        0.446,
+        0.375,
+        0.475
+      ]
+    ]
+  },
+  {
+    "out": "18_acta_audiencia.jpg",
+    "src": "NUEVA CARPETA/IMG-20240604-WA0003.jpg",
+    "case": "real"
+  },
+  {
+    "out": "19_receta_veterinaria.jpg",
+    "src": "NUEVA CARPETA/IMG-20240525-WA0008.jpg",
+    "case": "pet"
+  },
+  {
+    "out": "20_factura_consulta_vascular.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.40.34.jpeg",
+    "case": "real"
+  },
+  {
+    "out": "21_constancia_postrombotico.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 19.35.25.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.38,
+        0.24,
+        1.0,
+        0.34
+      ]
+    ]
+  },
+  {
+    "out": "22_factura_laboratorio.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.41.04.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.08,
+        0.2,
+        0.8,
+        0.27
+      ]
+    ]
+  },
+  {
+    "out": "23_factura_ecodoppler.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230202_082143.png",
+    "case": "real"
+  },
+  {
+    "out": "24_cartografia_venosa.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230202_081737.png",
+    "case": "real",
+    "boxes": [
+      [
+        0.38,
+        0.09,
+        0.64,
+        0.14
+      ]
+    ]
+  },
+  {
+    "out": "25_factura_foianini_dic.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.39.02.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.06,
+        0.46,
+        0.5,
+        0.52
+      ]
+    ]
+  },
+  {
+    "out": "26_factura_traumatologo_dic.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.39.33.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.15,
+        0.44,
+        0.5,
+        0.49
+      ]
+    ]
+  },
+  {
+    "out": "27_factura_tomografia.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230222_083330.png",
+    "case": "real"
+  },
+  {
+    "out": "28_factura_traumatologo_feb.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230222_083647.png",
+    "case": "real"
+  },
+  {
+    "out": "29_factura_rehalife_dic.jpg",
+    "src": "DICIEMBRE 5 2022/Factura Rehalife.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.25,
+        0.475,
+        0.72,
+        0.525
+      ]
+    ]
+  },
+  {
+    "out": "30_factura_consulta_dic9.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.36.43.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.12,
+        0.67,
+        0.68,
+        0.745
+      ]
+    ]
+  },
+  {
+    "out": "31_ingreso_cirugia.jpg",
+    "src": "NUEVA CARPETA/20220706_092424.jpg",
+    "case": "real"
+  },
+  {
+    "out": "32_factura_farmacia_julio.jpg",
+    "src": "NUEVA CARPETA/IMG_20220711_174609.jpg",
+    "case": "real"
+  },
+  {
+    "out": "33_receta_quirofano.jpg",
+    "src": "NUEVA CARPETA/IMG_20230420_174859.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.1,
+        0.2,
+        0.97,
+        0.29
+      ]
+    ]
+  },
+  {
+    "out": "34_transferencia_operacion.jpg",
+    "src": "NUEVA CARPETA/IMG-20230420-WA0014.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.41,
+        0.645,
+        0.92,
+        0.785
+      ]
+    ]
+  },
+  {
+    "out": "35_acuerdo_conciliacion.jpg",
+    "src": "NUEVA CARPETA/IMG-20240422-WA0031.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.12,
+        0.26,
+        0.97,
+        0.41
+      ]
+    ]
+  },
+  {
+    "out": "36_orden_laboratorio_emergencia.jpg",
+    "src": "NUEVA CARPETA/IMG_20220704_200508.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.18,
+        0.135,
+        0.67,
+        0.19
+      ]
+    ]
+  },
+  {
+    "out": "37_receta_emergencia.jpg",
+    "src": "NUEVA CARPETA/IMG_20220704_200521.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.35,
+        0.19,
+        0.97,
+        0.245
+      ]
+    ]
+  },
+  {
+    "out": "38_solicitud_valoracion_trauma.jpg",
+    "src": "NUEVA CARPETA/IMG_20220704_200538.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.33,
+        0.15,
+        1.0,
+        0.275
+      ]
+    ]
+  },
+  {
+    "out": "39_entrevista_policial.jpg",
+    "src": "NUEVA CARPETA/IMG_20220704_233827.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.723,
+        0.22,
+        0.8,
+        0.8
+      ],
+      [
+        0.575,
+        0.22,
+        0.68,
+        0.8
+      ],
+      [
+        0.0,
+        0.36,
+        0.11,
+        0.72
+      ]
+    ]
+  },
+  {
+    "out": "40_presupuesto_cirugia.jpg",
+    "src": "NUEVA CARPETA/20220705_135428.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.33,
+        0.24,
+        0.68,
+        0.32
+      ]
+    ]
+  },
+  {
+    "out": "41_receta_insumos.jpg",
+    "src": "NUEVA CARPETA/IMG_20220705_100305.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.36,
+        0.19,
+        0.78,
+        0.24
+      ]
+    ]
+  },
+  {
+    "out": "42_valoracion_cardiologica.jpg",
+    "src": "NUEVA CARPETA/IMG_20220705_100315.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.76,
+        0.34,
+        0.83,
+        0.86
+      ]
+    ]
+  },
+  {
+    "out": "43_rx_postoperatoria.jpg",
+    "src": "NUEVA CARPETA/IMG-20220707-WA0018.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "44_factura_inmovilizador.jpg",
+    "src": "NUEVA CARPETA/IMG_20220711_174520.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "45_factura_farmacorp_mixta.jpg",
+    "src": "NUEVA CARPETA/IMG_20220711_174541.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.185,
+        0.52,
+        0.205,
+        0.615
+      ],
+      [
+        0.27,
+        0.53,
+        0.305,
+        0.664
+      ]
+    ]
+  },
+  {
+    "out": "46_factura_farmacia_real.jpg",
+    "src": "NUEVA CARPETA/IMG_20220711_174551.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.37,
+        0.4,
+        0.45,
+        0.76
+      ],
+      [
+        0.33,
+        0.24,
+        0.375,
+        0.495
+      ]
+    ]
+  },
+  {
+    "out": "47_orden_secuestro_vehiculo.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0000.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.16,
+        0.365,
+        0.59,
+        0.405
+      ],
+      [
+        0.93,
+        0.435,
+        1.0,
+        0.465
+      ],
+      [
+        0.6,
+        0.46,
+        1.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.495,
+        0.2,
+        0.545
+      ]
+    ]
+  },
+  {
+    "out": "48_informe_medico_sept.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0012.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.22,
+        0.32,
+        0.82,
+        0.375
+      ],
+      [
+        0.3,
+        0.36,
+        0.58,
+        0.41
+      ]
+    ]
+  },
+  {
+    "out": "49_recibo_rx_sept.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0022.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.3,
+        0.235,
+        0.65,
+        0.27
+      ],
+      [
+        0.32,
+        0.305,
+        0.42,
+        0.325
+      ]
+    ]
+  },
+  {
+    "out": "50_informe_traumatologia_oct.jpg",
+    "src": "NUEVA CARPETA/20221006_081215.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.25,
+        0.225,
+        0.67,
+        0.268
+      ],
+      [
+        0.35,
+        0.27,
+        0.58,
+        0.305
+      ]
+    ]
+  },
+  {
+    "out": "51_receta_alivval_flexicam.jpg",
+    "src": "NUEVA CARPETA/20221006_081251.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.17,
+        0.1,
+        0.235,
+        0.68
+      ]
+    ]
+  },
+  {
+    "out": "52_informe_fisiodeus.jpg",
+    "src": "NUEVA CARPETA/20221006_082443.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "53_medicacion_emergencia_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_014211.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.17,
+        0.33,
+        0.42,
+        0.4
+      ],
+      [
+        0.49,
+        0.36,
+        0.8,
+        0.395
+      ],
+      [
+        0.44,
+        0.85,
+        0.92,
+        0.94
+      ]
+    ]
+  },
+  {
+    "out": "54_orden_doppler_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_041206.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.15,
+        0.26,
+        0.54,
+        0.315
+      ],
+      [
+        0.7,
+        0.265,
+        0.96,
+        0.31
+      ],
+      [
+        0.35,
+        0.335,
+        0.51,
+        0.375
+      ]
+    ]
+  },
+  {
+    "out": "55_hemograma_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_063811.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.905,
+        0.13,
+        0.945,
+        0.26
+      ],
+      [
+        0.88,
+        0.3,
+        0.905,
+        0.42
+      ]
+    ]
+  },
+  {
+    "out": "56_informe_rehabilitacion.jpg",
+    "src": "DICIEMBRE 5 2022/Informe de Rehabilitacion Nov2022 Parte 1.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.12,
+        0.155,
+        0.48,
+        0.2
+      ]
+    ]
+  },
+  {
+    "out": "57_orden_fisioterapia_dic.jpg",
+    "src": "DICIEMBRE 5 2022 CONSULTA MEDICA/WhatsApp Image 2022-12-05 at 09.17.48.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.2,
+        0.26,
+        0.95,
+        0.33
+      ]
+    ]
+  },
+  {
+    "out": "58_orden_resonancia.jpg",
+    "src": "DICIEMBRE 5 2022 CONSULTA MEDICA/WhatsApp Image 2022-12-05 at 09.18.59.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.17,
+        0.25,
+        0.93,
+        0.32
+      ]
+    ]
+  },
+  {
+    "out": "59_recibo_laboratorio_foianini.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.41.20.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.0,
+        0.38,
+        0.13,
+        0.75
+      ]
+    ]
+  },
+  {
+    "out": "60_ecodoppler_imagenes.jpg",
+    "src": "NUEVA CARPETA/20230202_081053.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.08,
+        0.0,
+        0.6,
+        0.05
+      ],
+      [
+        0.05,
+        0.098,
+        0.2,
+        0.127
+      ],
+      [
+        0.36,
+        0.098,
+        0.5,
+        0.127
+      ],
+      [
+        0.65,
+        0.098,
+        0.78,
+        0.127
+      ],
+      [
+        0.05,
+        0.353,
+        0.2,
+        0.383
+      ],
+      [
+        0.37,
+        0.353,
+        0.5,
+        0.383
+      ],
+      [
+        0.66,
+        0.353,
+        0.79,
+        0.383
+      ],
+      [
+        0.0,
+        0.608,
+        0.15,
+        0.64
+      ],
+      [
+        0.36,
+        0.608,
+        0.5,
+        0.64
+      ],
+      [
+        0.68,
+        0.608,
+        0.8,
+        0.64
+      ]
+    ]
+  },
+  {
+    "out": "61_transferencia_enero.jpg",
+    "src": "NUEVA CARPETA/IMG-20230125-WA0009.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.41,
+        0.415,
+        0.66,
+        0.46
+      ],
+      [
+        0.42,
+        0.585,
+        0.66,
+        0.625
+      ],
+      [
+        0.42,
+        0.64,
+        0.62,
+        0.68
+      ],
+      [
+        0.41,
+        0.69,
+        0.73,
+        0.735
+      ]
+    ]
+  },
+  {
+    "out": "62_orden_laboratorio_feb.jpg",
+    "src": "NUEVA CARPETA/IMG_20230222_082624.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "63_factura_laboratorio_feb.jpg",
+    "src": "NUEVA CARPETA/IMG_20230222_082644.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.18,
+        0.462,
+        0.45,
+        0.507
+      ]
+    ]
+  },
+  {
+    "out": "64_orden_laboratorio_marzo.jpg",
+    "src": "NUEVA CARPETA/IMG_20230317_185343.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.1,
+        0.15,
+        0.7,
+        0.177
+      ]
+    ]
+  },
+  {
+    "out": "65_recibo_alquiler_material.jpg",
+    "src": "NUEVA CARPETA/IMG-20230417-WA0051.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.625,
+        0.29,
+        0.695,
+        0.7
+      ],
+      [
+        0.19,
+        0.28,
+        0.32,
+        0.47
+      ]
+    ]
+  },
+  {
+    "out": "66_orden_cultivo_ciba.jpg",
+    "src": "NUEVA CARPETA/IMG_20230420_161656.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.0,
+        0.295,
+        0.52,
+        0.338
+      ]
+    ]
+  },
+  {
+    "out": "67_acuerdo_conciliacion_p1.jpg",
+    "src": "NUEVA CARPETA/IMG-20240422-WA0027.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.2,
+        0.265,
+        0.86,
+        0.29
+      ],
+      [
+        0.2,
+        0.325,
+        0.8,
+        0.35
+      ],
+      [
+        0.2,
+        0.38,
+        0.86,
+        0.405
+      ],
+      [
+        0.1,
+        0.48,
+        0.46,
+        0.51
+      ],
+      [
+        0.1,
+        0.73,
+        0.92,
+        0.83
+      ]
+    ]
+  },
+  {
+    "out": "68_acta_suspension_p1.jpg",
+    "src": "NUEVA CARPETA/IMG-20240604-WA0004.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.12,
+        0.343,
+        0.64,
+        0.367
+      ],
+      [
+        0.42,
+        0.485,
+        0.73,
+        0.51
+      ],
+      [
+        0.15,
+        0.5,
+        0.55,
+        0.53
+      ],
+      [
+        0.3,
+        0.735,
+        0.95,
+        0.795
+      ]
+    ]
+  },
+  {
+    "out": "69_receta_atorvastatina_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_101224.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.505,
+        0.0,
+        0.535,
+        0.25
+      ],
+      [
+        0.535,
+        0.38,
+        0.63,
+        0.75
+      ]
+    ]
+  },
+  {
+    "out": "70_interconsulta_vascular_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_041149.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.2,
+        0.325,
+        0.6,
+        0.365
+      ],
+      [
+        0.71,
+        0.315,
+        0.96,
+        0.36
+      ],
+      [
+        0.37,
+        0.39,
+        0.53,
+        0.425
+      ]
+    ]
+  },
+  {
+    "out": "71_informe_rehabilitacion_p2.jpg",
+    "src": "DICIEMBRE 5 2022/Informe de Rehabilitacion Nov2022 Parte 2.jpeg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "72_informe_medico_dic2_p2.jpg",
+    "src": "DICIEMBRE 5 2022 CONSULTA MEDICA/WhatsApp Image 2022-12-05 at 09.18.43.jpeg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "73_recibo_consulta_dic2.jpg",
+    "src": "CONSULTAS CON EL MEDICO/02122022/WhatsApp Image 2023-01-15 at 18.34.57.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.7,
+        0.1,
+        0.86,
+        0.137
+      ],
+      [
+        0.2,
+        0.148,
+        0.53,
+        0.174
+      ]
+    ]
+  },
+  {
+    "out": "74_presupuesto_quirofano.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.34.21.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.19,
+        0.225,
+        0.97,
+        0.29
+      ]
+    ]
+  },
+  {
+    "out": "75_nota_anestesiologo.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.34.36.jpeg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "76_informe_medico_dic9.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.35.32.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.3,
+        0.355,
+        0.92,
+        0.42
+      ]
+    ]
+  },
+  {
+    "out": "77_orden_rx_torax.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.35.54.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.19,
+        0.235,
+        0.82,
+        0.29
+      ]
+    ]
+  },
+  {
+    "out": "78_orden_electrocardiograma.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.36.08.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.21,
+        0.225,
+        0.86,
+        0.29
+      ]
+    ]
+  },
+  {
+    "out": "79_recibo_consulta_dic9.jpg",
+    "src": "CONSULTAS CON EL MEDICO/09122022/WhatsApp Image 2023-01-15 at 18.36.25.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.73,
+        0.1,
+        0.87,
+        0.137
+      ],
+      [
+        0.19,
+        0.152,
+        0.53,
+        0.183
+      ]
+    ]
+  },
+  {
+    "out": "80_informe_rehalife_dic.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FISIOTERAPIA/WhatsApp Image 2023-01-15 at 18.42.07.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.18,
+        0.2,
+        0.5,
+        0.235
+      ]
+    ]
+  },
+  {
+    "out": "81_orden_rx_foianini.jpg",
+    "src": "CONSULTAS CON EL MEDICO/FOIANINI/WhatsApp Image 2023-01-15 at 18.38.30.jpeg",
+    "case": "real",
+    "boxes": [
+      [
+        0.42,
+        0.248,
+        0.57,
+        0.266
+      ]
+    ]
+  },
+  {
+    "out": "82_cartografia_esquema.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230202_081834.png",
+    "case": "real",
+    "boxes": [
+      [
+        0.34,
+        0.065,
+        0.66,
+        0.1
+      ]
+    ]
+  },
+  {
+    "out": "83_nota_entrega_osteosintesis.jpg",
+    "src": "NUEVA CARPETA/20220706_063606.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "84_orden_rx_julio.jpg",
+    "src": "NUEVA CARPETA/20220727_095251.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.52,
+        0.272,
+        0.7,
+        0.31
+      ]
+    ]
+  },
+  {
+    "out": "85_informe_fisiodeus_h2.jpg",
+    "src": "NUEVA CARPETA/20221006_082455.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "86_interconsulta_psiquiatria_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_041222.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.18,
+        0.262,
+        0.57,
+        0.318
+      ],
+      [
+        0.73,
+        0.265,
+        0.97,
+        0.305
+      ],
+      [
+        0.38,
+        0.343,
+        0.52,
+        0.378
+      ]
+    ]
+  },
+  {
+    "out": "87_orden_ego_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_053922.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.1,
+        0.33,
+        0.53,
+        0.378
+      ],
+      [
+        0.72,
+        0.35,
+        0.99,
+        0.397
+      ],
+      [
+        0.32,
+        0.415,
+        0.48,
+        0.457
+      ]
+    ]
+  },
+  {
+    "out": "88_troponina_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_063819.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.71,
+        0.62,
+        0.78,
+        0.8
+      ]
+    ]
+  },
+  {
+    "out": "89_quimica_sanguinea_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_063827.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.675,
+        0.04,
+        0.708,
+        0.36
+      ],
+      [
+        0.7,
+        0.38,
+        0.73,
+        0.54
+      ],
+      [
+        0.688,
+        0.37,
+        0.73,
+        0.55
+      ]
+    ]
+  },
+  {
+    "out": "90_protrombina_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_063837.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.712,
+        0.09,
+        0.745,
+        0.47
+      ],
+      [
+        0.735,
+        0.5,
+        0.765,
+        0.68
+      ],
+      [
+        0.716,
+        0.49,
+        0.765,
+        0.68
+      ]
+    ]
+  },
+  {
+    "out": "91_factura_farmacorp_delivery.jpg",
+    "src": "NUEVA CARPETA/IMG_20220711_174355.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "92_formulario_silla_ruedas_p1.jpg",
+    "src": "NUEVA CARPETA/IMG_20220719_105637.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.52,
+        0.355,
+        0.92,
+        0.38
+      ],
+      [
+        0.52,
+        0.51,
+        0.93,
+        0.57
+      ]
+    ]
+  },
+  {
+    "out": "93_formulario_silla_ruedas_p2.jpg",
+    "src": "NUEVA CARPETA/IMG_20220719_105643.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.45,
+        0.835,
+        0.88,
+        0.895
+      ]
+    ]
+  },
+  {
+    "out": "94_orden_rx_sept.jpg",
+    "src": "NUEVA CARPETA/IMG_20220902_092902.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.41,
+        0.19,
+        0.97,
+        0.25
+      ]
+    ]
+  },
+  {
+    "out": "95_consentimiento_clinica_espana.jpg",
+    "src": "NUEVA CARPETA/IMG_20230420_104205.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0.195,
+        0.45,
+        0.24
+      ],
+      [
+        0,
+        0.61,
+        0.37,
+        0.69
+      ],
+      [
+        0.45,
+        0.615,
+        0.92,
+        0.74
+      ]
+    ]
+  },
+  {
+    "out": "96_consentimiento_anestesico.jpg",
+    "src": "NUEVA CARPETA/IMG_20230420_104220.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "97_acta_denuncia.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0003.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.18,
+        0.48,
+        0.32,
+        0.9
+      ],
+      [
+        0.11,
+        0.75,
+        0.18,
+        0.9
+      ],
+      [
+        0.43,
+        0.0,
+        0.475,
+        1.0
+      ],
+      [
+        0.53,
+        0.45,
+        0.555,
+        0.95
+      ],
+      [
+        0.18,
+        0.05,
+        0.31,
+        0.49
+      ],
+      [
+        0.05,
+        0.33,
+        0.11,
+        0.76
+      ],
+      [
+        0.43,
+        0,
+        0.5,
+        1
+      ]
+    ]
+  },
+  {
+    "out": "98_inicio_investigacion.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0004.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.355,
+        0.0,
+        0.395,
+        1.0
+      ]
+    ]
+  },
+  {
+    "out": "99_factura_comida_feb.jpg",
+    "src": "NUEVA CARPETA/IMG-20230223-WA0008.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.6,
+        0.31,
+        0.75,
+        0.35
+      ]
+    ]
+  },
+  {
+    "out": "100_factura_comida_ene.jpg",
+    "src": "NUEVA CARPETA/IMG-20230223-WA0010.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "101_acuerdo_conciliacion_p2.jpg",
+    "src": "NUEVA CARPETA/IMG-20240422-WA0029.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.3,
+        0.245,
+        0.73,
+        0.28
+      ],
+      [
+        0.49,
+        0.305,
+        0.92,
+        0.34
+      ]
+    ]
+  },
+  {
+    "out": "102_certificacion_firmas.jpg",
+    "src": "NUEVA CARPETA/IMG-20240422-WA0036.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.19,
+        0.215,
+        0.82,
+        0.29
+      ],
+      [
+        0.15,
+        0.315,
+        0.6,
+        0.43
+      ],
+      [
+        0.6,
+        0.31,
+        0.86,
+        0.375
+      ]
+    ]
+  },
+  {
+    "out": "103_rx_rodilla_ingreso.jpg",
+    "src": "NUEVA CARPETA/IMG_20220704_211007.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.78,
+        0.52,
+        0.818,
+        0.69
+      ]
+    ]
+  },
+  {
+    "out": "104_rx_postoperatoria_lateral.jpg",
+    "src": "NUEVA CARPETA/IMG-20220707-WA0017.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0.882,
+        0.13,
+        0.904
+      ]
+    ]
+  },
+  {
+    "out": "105_rx_control_julio.jpg",
+    "src": "NUEVA CARPETA/IMG-20220809-WA0003.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.3,
+        0.8,
+        0.5,
+        0.832
+      ],
+      [
+        0.2,
+        0.843,
+        0.5,
+        0.868
+      ]
+    ]
+  },
+  {
+    "out": "106_rx_control_sept.jpg",
+    "src": "NUEVA CARPETA/IMG-20220902-WA0014.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "107_rx_torax_cps.jpg",
+    "src": "NUEVA CARPETA/20221017_014633.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "108_rx_rodilla_ap_foianini.jpg",
+    "src": "NUEVA CARPETA/IMG_20221214_121516.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0.025,
+        0.2,
+        0.09
+      ]
+    ]
+  },
+  {
+    "out": "109_rx_rodilla_lat_foianini.jpg",
+    "src": "NUEVA CARPETA/IMG_20221214_121525.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0.035,
+        0.26,
+        0.115
+      ]
+    ]
+  },
+  {
+    "out": "110_ecodoppler_imagenes_h2.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230202_082022.png",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0.035,
+        0.65,
+        0.09
+      ]
+    ]
+  },
+  {
+    "out": "111_tomografia_serie2.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230210_135108.png",
+    "case": "real",
+    "boxes": [
+      [
+        0.34,
+        0.02,
+        0.495,
+        0.09
+      ],
+      [
+        0.84,
+        0.02,
+        0.995,
+        0.09
+      ],
+      [
+        0.34,
+        0.52,
+        0.495,
+        0.6
+      ],
+      [
+        0.84,
+        0.52,
+        0.995,
+        0.6
+      ]
+    ]
+  },
+  {
+    "out": "112_tomografia_serie3.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230210_135201.png",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0,
+        0.16,
+        0.05
+      ],
+      [
+        0.44,
+        0.015,
+        0.55,
+        0.07
+      ],
+      [
+        0.86,
+        0.015,
+        0.965,
+        0.07
+      ],
+      [
+        0.44,
+        0.515,
+        0.55,
+        0.57
+      ],
+      [
+        0.86,
+        0.515,
+        0.965,
+        0.57
+      ]
+    ]
+  },
+  {
+    "out": "113_tomografia_axial.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230210_135213.png",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0,
+        0.13,
+        0.05
+      ],
+      [
+        0.36,
+        0.015,
+        0.475,
+        0.07
+      ],
+      [
+        0.74,
+        0.015,
+        0.855,
+        0.07
+      ],
+      [
+        0.36,
+        0.515,
+        0.475,
+        0.57
+      ],
+      [
+        0.74,
+        0.515,
+        0.855,
+        0.57
+      ]
+    ]
+  },
+  {
+    "out": "114_tomografia_coronal.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230210_135230.png",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0,
+        0.115,
+        0.05
+      ],
+      [
+        0.38,
+        0.015,
+        0.5,
+        0.068
+      ],
+      [
+        0.78,
+        0.015,
+        0.89,
+        0.068
+      ],
+      [
+        0.38,
+        0.515,
+        0.5,
+        0.568
+      ],
+      [
+        0.78,
+        0.515,
+        0.89,
+        0.568
+      ]
+    ]
+  },
+  {
+    "out": "115_tomografia_sagital.jpg",
+    "src": "CAPTURAS FEB 2023/Captura de pantalla_20230210_135328.png",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0,
+        0.115,
+        0.05
+      ],
+      [
+        0.38,
+        0.015,
+        0.5,
+        0.068
+      ],
+      [
+        0.78,
+        0.015,
+        0.89,
+        0.068
+      ],
+      [
+        0.38,
+        0.515,
+        0.5,
+        0.568
+      ],
+      [
+        0.78,
+        0.515,
+        0.89,
+        0.568
+      ]
+    ]
+  },
+  {
+    "out": "116_tomografia_3d.jpg",
+    "src": "NUEVA CARPETA/IMG_20230222_082551.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.32,
+        0.08,
+        0.5,
+        0.13
+      ],
+      [
+        0.76,
+        0.09,
+        0.94,
+        0.135
+      ],
+      [
+        0.3,
+        0.525,
+        0.5,
+        0.572
+      ],
+      [
+        0.77,
+        0.525,
+        0.95,
+        0.572
+      ]
+    ]
+  },
+  {
+    "out": "117_foto_hospitalizacion.jpg",
+    "src": "NUEVA CARPETA/IMG-20220706-WA0002.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "118_foto_inmovilizador_cama.jpg",
+    "src": "NUEVA CARPETA/20220709_105043.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.33,
+        0,
+        0.72,
+        0.06
+      ]
+    ]
+  },
+  {
+    "out": "119_foto_curacion_gasas.jpg",
+    "src": "NUEVA CARPETA/IMG_20220718_160324.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "120_foto_herida_suturada.jpg",
+    "src": "NUEVA CARPETA/IMG_20220718_160338.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "121_foto_aposito.jpg",
+    "src": "NUEVA CARPETA/20220726_153809.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "122_foto_inmovilizador_silla.jpg",
+    "src": "NUEVA CARPETA/IMG-20220801-WA0048.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "123_foto_cicatriz_agosto.jpg",
+    "src": "NUEVA CARPETA/IMG_20220809_204351.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "124_foto_cicatriz_agosto_detalle.jpg",
+    "src": "NUEVA CARPETA/IMG_20220809_204438.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "125_foto_piernas_ferula.jpg",
+    "src": "NUEVA CARPETA/IMG-20220906-WA0043.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "126_foto_pierna_ferula_detalle.jpg",
+    "src": "NUEVA CARPETA/IMG-20220906-WA0045.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "127_foto_pierna_ferula_cama.jpg",
+    "src": "NUEVA CARPETA/IMG-20220906-WA0047.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "128_foto_piernas_sept.jpg",
+    "src": "NUEVA CARPETA/IMG_20220908_091628.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "129_foto_piernas_almohada.jpg",
+    "src": "NUEVA CARPETA/IMG_20220909_205314.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "130_foto_puntos_rojos.jpg",
+    "src": "NUEVA CARPETA/IMG_20220915_093754.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "131_foto_puntos_rojos_detalle.jpg",
+    "src": "NUEVA CARPETA/IMG_20220915_093801.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "132_foto_lesion_costra.jpg",
+    "src": "NUEVA CARPETA/IMG_20230120_223400.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "133_foto_rodilla_enrojecida.jpg",
+    "src": "NUEVA CARPETA/IMG_20230120_223423.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "134_foto_pierna_enrojecida.jpg",
+    "src": "NUEVA CARPETA/IMG_20230120_223436.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "135_foto_lesion_pierna_feb.jpg",
+    "src": "NUEVA CARPETA/20230202_060318.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "136_foto_herida_abierta.jpg",
+    "src": "NUEVA CARPETA/IMG_20230223_184842.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "137_foto_herida_curacion.jpg",
+    "src": "NUEVA CARPETA/IMG_20230226_103027.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "138_foto_herida_vendaje.jpg",
+    "src": "NUEVA CARPETA/20230228_181237.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "139_foto_herida_marzo.jpg",
+    "src": "NUEVA CARPETA/20230304_122119.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "140_foto_herida_media_compresiva.jpg",
+    "src": "NUEVA CARPETA/20230306_183355.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "141_foto_rodilla_consultorio.jpg",
+    "src": "NUEVA CARPETA/IMG-20230306-WA0026.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "142_foto_retiro_puntos.jpg",
+    "src": "NUEVA CARPETA/IMG-20230418-WA0015.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0,
+        0,
+        0.3,
+        0.19
+      ]
+    ]
+  },
+  {
+    "out": "143_foto_cicatriz_mayo.jpg",
+    "src": "NUEVA CARPETA/IMG_20230517_195702.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "144_foto_piernas_junio_frente.jpg",
+    "src": "NUEVA CARPETA/IMG_20230608_120220.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "145_foto_piernas_junio_abajo.jpg",
+    "src": "NUEVA CARPETA/IMG_20230608_120244.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "146_foto_piernas_junio.jpg",
+    "src": "NUEVA CARPETA/IMG_20230608_120256.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "147_foto_rodilla_junio_lateral.jpg",
+    "src": "NUEVA CARPETA/IMG_20230608_120328.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "148_busqueda_chata_1.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-11-19-50-654_com.google.android.googlequicksearchbox.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "149_busqueda_chata_2.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-11-20-21-593_com.google.android.googlequicksearchbox.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "150_busqueda_orinal_cuna.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-11-24-04-628_com.google.android.googlequicksearchbox.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "151_cotizacion_zonamedica_pagina.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-12-17-35-552_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "152_cotizacion_camsi_pagina.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-37-01-705_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "153_cotizacion_silla_san_diego.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-41-29-368_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "154_cotizacion_silla_zonamedica.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-45-02-517_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "155_busqueda_silla_zodiaco.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-51-54-866_com.google.android.googlequicksearchbox.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "156_busqueda_silla_todo_terreno.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-53-02-568_com.google.android.googlequicksearchbox.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "157_busqueda_silla_precio.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-53-35-247_com.google.android.googlequicksearchbox.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "158_cotizacion_silla_xpress.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-55-26-417_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "159_cotizacion_camsi_busqueda.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-55-58-448_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "160_cotizacion_silla_xpress_colores.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-14-58-52-672_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "161_cotizacion_silla_mexico.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-15-13-18-684_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "162_lista_precios_silla_santa_cruz.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-10-15-14-51-863_com.facebook.katana.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "163_cotizacion_silla_sanitaria.jpg",
+    "src": "NUEVA CARPETA/Screenshot_2022-07-11-08-43-12-518_com.whatsapp.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.18,
+        0.035,
+        0.6,
+        0.115
+      ]
+    ]
+  },
+  {
+    "out": "164_carrito_farmacia_tialgin.jpg",
+    "src": "NUEVA CARPETA/IMG-20220718-WA0013.jpg",
+    "case": "real",
+    "boxes": []
+  },
+  {
+    "out": "165_busqueda_cardiovascular.jpg",
+    "src": "NUEVA CARPETA/IMG-20221018-WA0001.jpg",
+    "case": "real",
+    "boxes": [
+      [
+        0.58,
+        0.66,
+        0.97,
+        0.87
+      ]
+    ]
+  },
+  {
+    "out": "166_cita_foianini_portal.jpg",
+    "src": "NUEVA CARPETA/IMG-20221212-WA0011.jpg",
+    "case": "real",
+    "boxes": []
+  }
+]
