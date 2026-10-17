@@ -12,8 +12,12 @@ COPY dindo ./dindo
 COPY docs ./docs
 COPY demo ./demo
 
-# Build the demo database (synthetic cases filled from their ground truth so the app works before any upload)
-RUN python -m dindo.servidor.seed --gt
+# Demo database: what the AMD models read from the anonymized demo documents (tools/exportar_db_demo.py).
+# Without it, fall back to filling the demo cases from their hand transcription.
+RUN mkdir -p data && if [ -f demo/dindo_demo.db ]; then cp demo/dindo_demo.db data/dindo.db; else python -m dindo.servidor.seed --gt; fi
+
+# The demo case is from 2022: replay one of its days, mid-afternoon
+ENV DINDO_TODAY=2022-10-17 DINDO_TIME=15:10
 
 EXPOSE 8000
 CMD ["sh", "-c", "uvicorn dindo.servidor.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
