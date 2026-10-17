@@ -681,7 +681,7 @@ async function shareUrl(url, name, type) {
 
 async function openCases() {
   state.cases = await api("/api/cases");
-  openSheet(t("cases"), `<div class="list">${state.cases.map((c) => `<div class="row" data-case="${c.id}" style="cursor:pointer"><div><b>${esc(c.title)}</b><span class="s">${esc(c.summary || "")}</span></div>${c.id === state.caseId ? ic("check") : ""}</div>`).join("")}</div>`);
+  openSheet(t("cases"), `<button class="btn primary" data-open="newcase" style="justify-self:start">${ic("plus")} ${t("new_case")}</button><div class="list">${state.cases.map((c) => `<div class="row" data-case="${c.id}" style="cursor:pointer"><div><b>${esc(c.title)}</b><span class="s">${esc(c.summary || "")}</span></div>${c.id === state.caseId ? ic("check") : ""}</div>`).join("")}</div>`);
 }
 
 function openMenu() {
@@ -709,6 +709,16 @@ function openAddMed() {
       <label class="small muted">${t("med_days")}<input class="input" name="days" type="number" min="1" placeholder="30"></label></div>
     <input class="input" name="instructions" placeholder="${t("med_ins")}">
     <div><button class="btn primary">${t("save")}</button></div></form>`);
+}
+
+function openNewCase() {
+  openSheet(t("new_case"), `<form id="case-form" style="display:grid;gap:12px;max-width:520px">
+    <label class="fld"><span class="lbl">${t("nc_title")}</span><input class="input" name="title" placeholder="${t("nc_title_ph")}" required maxlength="80"></label>
+    <label class="fld"><span class="lbl">${t("nc_subject")}</span><input class="input" name="subject_name" placeholder="${t("nc_subject_ph")}" maxlength="80"></label>
+    <label class="fld"><span class="lbl">${t("nc_kind")}</span><select class="sel" name="subject_kind"><option value="person">${t("nc_person")}</option><option value="pet">${t("nc_pet")}</option></select></label>
+    <label class="fld"><span class="lbl">${t("nc_members")}</span><input class="input" name="members" placeholder="${t("nc_members_ph")}"></label>
+    <label class="fld"><span class="lbl">${t("nc_summary")}</span><input class="input" name="summary" placeholder="${t("nc_summary_ph")}" maxlength="300"></label>
+    <div><button class="btn primary">${t("nc_create")}</button></div></form>`);
 }
 
 function openAddContact() {
@@ -829,7 +839,7 @@ document.addEventListener("click", async (ev) => {
   if (!el) { if (ev.target.id === "modal") $("#modal").hidden = true; return; }
   const ds = el.dataset;
   if (ds.close !== undefined) { $("#modal").hidden = true; return; }
-  if (ds.open) return ({ cases: openCases, menu: openMenu, emergency: openEmergency, addcontact: openAddContact, addmed: openAddMed }[ds.open])();
+  if (ds.open) return ({ cases: openCases, newcase: openNewCase, menu: openMenu, emergency: openEmergency, addcontact: openAddContact, addmed: openAddMed }[ds.open])();
   if (ds.themeToggle !== undefined) {
     const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = next;
@@ -917,6 +927,17 @@ document.addEventListener("submit", async (e) => {
   e.preventDefault();
   const f = e.target;
   if (f.dataset.answerForm) { const v = f.querySelector("input").value.trim(); if (v) answerQ(f.dataset.answerForm, v); return; }
+  if (f.id === "case-form") {
+    const c = await send("/api/cases", "POST", Object.fromEntries(new FormData(f)));
+    state.cases = await api("/api/cases");
+    state.caseId = c.id;
+    try { localStorage.setItem("dindo.case", c.id); } catch (_) {}
+    Object.assign(state, { summary: null, calSel: null, calMonth: null, expCat: null, docType: null, member: null });
+    $("#modal").hidden = true;
+    toast(t("nc_done"));
+    location.hash = "#subir";
+    return route();
+  }
   if (f.id === "ct-form") {
     const data = Object.fromEntries(new FormData(f));
     data.is_emergency = !!f.is_emergency.checked;

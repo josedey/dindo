@@ -181,6 +181,24 @@ def list_cases():
         return db.rows(con, "SELECT * FROM cases ORDER BY id")
 
 
+@app.post("/api/cases")
+def create_case(data: dict = Body(...)):
+    """A new, empty case: a person or a pet, with the family members who will use it."""
+    title = (data.get("title") or "").strip()[:80]
+    subject = (data.get("subject_name") or title).strip()[:80]
+    kind = data.get("subject_kind") if data.get("subject_kind") in ("person", "pet") else "person"
+    if not title:
+        raise HTTPException(400, "The case needs a name")
+    members = [m.strip()[:40] for m in (data.get("members") or "").split(",") if m.strip()][:6] or ["Familia"]
+    colors = ["#167D8D", "#3E8FB0", "#B08530", "#8A6E9E", "#7A8A3E", "#9C5B3B"]
+    with db.connect() as con:
+        case_id = con.execute("INSERT INTO cases (title, subject_name, subject_kind, summary) VALUES (?,?,?,?)",
+                              (title, subject, kind, (data.get("summary") or "").strip()[:300])).lastrowid
+        con.executemany("INSERT INTO members (case_id, name, role, color) VALUES (?,?,?,?)",
+                        [(case_id, m, "family", colors[i % len(colors)]) for i, m in enumerate(members)])
+        return db.row(con, "SELECT * FROM cases WHERE id=?", case_id)
+
+
 @app.get("/api/cases/{case_id}/summary")
 def summary(case_id: int, day: str | None = None):
     d = _day(day)

@@ -506,3 +506,5 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: 14.5px; }
 .doc-card { min-width: 0; }
 .doc-card b, .evo-body b, .evo-body .s { overflow-wrap: anywhere; }
 .evo-body > * { max-width: 100%; }
+
+.fld { display: grid; gap: 6px; }
