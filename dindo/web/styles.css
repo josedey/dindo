@@ -499,3 +499,10 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: 14.5px; }
 }
 :root:is([data-pal="verde"], [data-pal="azul"], [data-pal="turquesa"], [data-pal="grafito"]) h1 { font-weight: 800; }
 :root[data-theme="light"]:is([data-pal="verde"], [data-pal="azul"], [data-pal="turquesa"], [data-pal="grafito"], [data-pal="lateral"]) .mnav { background: var(--sheet); box-shadow: 0 -2px 8px rgba(16, 40, 48, .06); }
+/* Phone top bar: the case name shrinks (with "…") so the SOS and menu buttons always fit on screen */
+.mtop .case-btn { flex: 1 1 auto; min-width: 0; justify-content: center; }
+.mtop .case-btn b { min-width: 0; }
+.mtop .r, .mtop .mlogo { flex: none; }
+.doc-card { min-width: 0; }
+.doc-card b, .evo-body b, .evo-body .s { overflow-wrap: anywhere; }
+.evo-body > * { max-width: 100%; }
