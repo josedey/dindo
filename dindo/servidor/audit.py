@@ -5,6 +5,7 @@ by both (source 'ai+rule').
 """
 import json
 import re
+import unicodedata
 from datetime import date
 
 from . import db
@@ -45,12 +46,36 @@ def case_side(con, case_id: int) -> str | None:
     return max(votes, key=votes.get)
 
 
+GENERIC_SUBJECTS = {"paciente", "patient", "mascota", "pet", "persona"}
+
+
+def _name_words(text: str) -> set[str]:
+    plain = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower()
+    return set(re.findall(r"[a-z]{3,}", plain))
+
+
+def other_patient(con, case_id: int, written: str | None) -> str | None:
+    """A warning when the paper names a different patient than the case's (not one name in common)."""
+    case = db.row(con, "SELECT subject_name FROM cases WHERE id=?", case_id)
+    subject = (case or {}).get("subject_name") or ""
+    if not written or "anonimiz" in written.lower() or _name_words(subject) <= GENERIC_SUBJECTS:
+        return None
+    paper, ours = _name_words(written), _name_words(subject)
+    if not paper or paper & ours:
+        return None
+    return (f"Este papel dice que es de «{written.strip()}», pero el caso es de «{subject}». ¿Es de otro paciente? "
+            f"Si es así, borralo de este caso y subilo al caso correcto.")
+
+
 def rule_findings(con, case_id: int, doc: dict, x: dict) -> list[tuple[str, str, str]]:
     """(severity, kind, detail) for one document."""
     if x.get("not_medical"):  # a restaurant bill and the like: one friendly note, none of the insurance rules
         return [("info", "not_medical", f"{x['not_medical']} La guardamos en «No médicos», aparte de los gastos de salud. "
                                         "Sirve para saber cuánto se gastó en total; normalmente el seguro no la cubre.")]
     out = []
+    other = other_patient(con, case_id, x.get("patient_name_as_written"))
+    if other:
+        out.append(("warning", "patient", other))
     doc_date = date.fromisoformat(doc["doc_date"]) if doc["doc_date"] else None
     policy = db.row(con, "SELECT insurer, nit FROM insurance WHERE case_id=?", case_id)
     items = x.get("line_items") or []

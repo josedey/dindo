@@ -51,6 +51,7 @@ Rules:
 - Fill "instructions" with every indication for the patient written on the document: diet (allowed or to avoid),
   activity limits, care (immobilizer, compression stockings, rest) and how to take medication. One item each, in
   Spanish, with "until" computed from the document date when a duration is given.
+- If the paper clearly names a different patient than this case's patient, report it as an anomaly ("El papel es de otro paciente: ...").
 - Black rectangles are intentional redactions of personal data. Ignore them and never report them as anomalies.
 - Add a key "questions": a list of {{"question": "...", "options": ["...", "..."]}} in Spanish for every value a person
   should confirm before relying on it (illegible drug names, doses, sides, amounts). Empty list if everything is clear."""

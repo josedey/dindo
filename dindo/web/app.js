@@ -92,6 +92,7 @@ function findingTitle(f) {
   if (f.kind === "body_side") return t("ft_side", { o: t(what) });
   if (f.kind === "date") return t(/anterior|antes|before/.test(d) ? "ft_before" : "ft_date");
   if (f.kind === "arithmetic") return t("ft_math");
+  if (f.kind === "patient") return t("ft_patient");
   if (f.kind === "billing") return t(/particular|sin seguro/.test(d) ? "ft_private" : /recibo|fiscal|receipt/.test(d) ? "ft_receipt" : "ft_billing");
   const s = (f.detail || "").split(/[.;:]/)[0];
   return s.length > 60 ? s.slice(0, 58) + "…" : s;
